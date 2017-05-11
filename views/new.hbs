@@ -7,20 +7,20 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   </head>
-  <body>
+  <body ng-app="NewNoteApp">
     {{> navhead}}
-    <div class="container">
+    <div class="container" ng-controller="NewNoteController as nctrl">
       <form>
         <div class="form-group">
           <label for="noteTitleInput">Enter the title of your note:</label>
-          <input class="form-control" id="noteTitleInput" placeholder="Note title here...">
+          <input class="form-control" ng-model="nctrl.n_title" id="noteTitleInput" placeholder="Note title here...">
         </div>
         <div class="form-group">
           <label for="noteBodyInput">Enter the body of your note:</label>
-          <input class="form-control" id="noteBodyInput" placeholder="Note body here...">
+          <input class="form-control" ng-model="nctrl.n_body" id="noteBodyInput" placeholder="Note body here...">
         </div>
       </form>
-      <button type="submit" class="btn btn-primary">Create Note</button>
+      <button type="submit" class="btn btn-primary" ng-click="nctrl.post();">Create Note</button>
     </div>
     <!-- JavaScript: placed at the end of the document so the pages load faster -->
     <!-- jQuery library -->

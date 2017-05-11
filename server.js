@@ -21,4 +21,8 @@ app.get('/new', (req, res) => {
   res.render('new.hbs');
 });
 
+app.post('/post', (req, res) => {
+  console.log(req.query);
+});
+
 app.listen(port);
